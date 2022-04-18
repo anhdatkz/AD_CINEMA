@@ -1,0 +1,115 @@
+@import url(../style.css);
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--white);
+    height: var(--header-height);
+    width: 100%;
+    border-bottom: 1px solid var(--light-grey);
+    z-index: 7;
+}
+
+#header .header-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+#header .logo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#header .logo svg{
+    font-size: 32px;
+    color: var(--green);
+}
+
+#header .logo h1{
+    font-size: 24px;
+    padding: 0 20px;
+    color: var(--grey);
+}
+
+
+/* CSS NAV */
+#header .nav{
+    height: 100%;
+    line-height: 60px;
+}
+
+.nav .nav__list li{
+    display: inline-block;
+    margin: 0 20px;
+    line-height: 32px;
+}
+
+.nav__list > li > a{
+    text-decoration: none;
+    color: var(--light-black);
+    font-weight: 700;
+    display: block;                     /* set full kích thước thẻ a bằng thẻ cha*/
+}
+
+.nav__list > li:hover > a{
+    cursor: pointer;
+    color: var(--grey);
+}
+
+/* CSS Search box */
+
+.search{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+}
+
+.search svg{
+    margin: 0 10px;
+    color: var(--light-grey);
+    font-size: 20px;
+    display: block;
+}
+
+.search input{
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 90%;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 8px;
+    color: var(--light-black);
+}
+
+/* CSS Login */
+
+.login{
+    width: 120px;
+    line-height: 40px;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 8px;
+}
+
+.login:hover{
+    cursor: pointer;
+    background-color: var(--green);
+    opacity: 0.9;
+}

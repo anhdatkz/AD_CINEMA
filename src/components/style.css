@@ -1,0 +1,18 @@
+:root{
+    /* VAR HEIGHT */
+    --header-height: 60px;
+    
+    /* VAR COLOR */
+    --black: #000;
+    --white: #ffffff;
+    --green: #298431;
+    --grey: #5c5c5c;
+    --light-grey: #999999;
+    --light-black: #333333;
+    --red: #b71c1c;
+
+}
+
+.active{
+    border-bottom: 3px solid var(--green);
+}

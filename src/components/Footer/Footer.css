@@ -1,0 +1,29 @@
+@import url(../style.css);
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    height: 60px;
+    background-color: var(--grey);
+}
+
+#footer .copy-right h3{
+    color: var(--white);
+}
+
+#footer .social{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#footer .social a{
+    padding: 0 10px;
+}
+
+.social a svg{
+    font-size: 24px;
+    color: var(--white);
+}
