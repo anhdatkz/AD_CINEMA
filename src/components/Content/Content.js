@@ -19,7 +19,7 @@ function ContentItem(){
         fetch(upComingURL)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.results);
+                // console.log(data.results);
                 setMovies(data.results);
             });
     }, []);
@@ -53,26 +53,27 @@ function ContentItem(){
 
     return(
         <div className="content__item">
-                <div className="content__item-name">
-                    <h2>Trending</h2>
-                </div>
-                <div className="content__item-list">
-                    <div className="icon prev" onClick={prevHandler}><FaAngleLeft/></div>
-                    <ul className="list-movie">
-                        {movies.map((movie) => (
-                            <li className="movie-item" key={movie.id}>
-                                <img
-                                    className="movie-poster"
-                                    src={apiConfig.w500Image(movie.poster_path)}
-                                    alt=""
-                                />
-                                <p className="movie-name">{movie.original_title}</p>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="icon next" onClick={nextHandler}><FaAngleRight/></div>
-                </div>
+            <div className="content__item-name">
+                <h2 className="content-title">Trending</h2>
+                <div className="watch-more">Xem thêm</div>
             </div>
+            <div className="content__item-list">
+                <div className="icon prev" onClick={prevHandler}><FaAngleLeft/></div>
+                <ul className="list-movie">
+                    {movies.map((movie) => (
+                        <li className="movie-item" key={movie.id}>
+                            <img
+                                className="movie-poster"
+                                src={apiConfig.w500Image(movie.poster_path)}
+                                alt=""
+                            />
+                            <p className="movie-name">{movie.original_title}</p>
+                        </li>
+                    ))}
+                </ul>
+                <div className="icon next" onClick={nextHandler}><FaAngleRight /></div>
+            </div>
+        </div>
     )
 }
 

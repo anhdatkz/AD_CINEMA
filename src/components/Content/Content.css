@@ -10,13 +10,36 @@ h2{
     padding: 50px 80px;
 }
 
+#content .content__item-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content__item-name .watch-more{
+    font-size: 12px;
+    color: var(--green);
+    border: 1px solid var(--green);
+    line-height: 24px;
+    font-weight: 700;
+    padding: 0 16px;
+    border-radius: 16px;
+    transition: all 0.2s;
+}
+
+.content__item-name .watch-more:hover{
+    background-color: var(--green);
+    color: var(--white);
+    cursor: pointer;
+}
+
 #content .content__item{
-    margin: 30px 0;
+    margin: 40px 0;
     overflow: hidden;
 }
 
 .content__item-list{
-    margin: 10px 0;
+    margin-top: 20px;
     position: relative;
 }
 
@@ -52,7 +75,6 @@ h2{
     list-style: none;
     transform: translateX(0);
     transition: all 1s ease-in-out;
-    /* overflow: hidden; */
 }
 
 .content__item-list .list-movie .movie-item{

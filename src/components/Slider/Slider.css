@@ -3,31 +3,66 @@
 #slider{
     position: relative;
     margin-top: var(--header-height);
-    background-image: url("https://image.tmdb.org/t/p/original/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg");
+    transition: all 1s ease;
+}
+
+#slider .slider-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+}
+
+#slider .slider-icon:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#slider .slider-icon svg{
+    font-size: 60px;
+    color: var(--white);
+}
+
+#slider .slider-icon.right{
+    right: 0;
+}
+
+#slider .slider-panel{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-    padding-top: 50%;
+    padding-top: 50%; 
 }
 
-#slider .slider__content{
-    position: absolute;
-    top: 30%;
-    width: 50%;
+@keyframes swipe-left{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.slider__content{
     color: var(--white);
-    margin-left: 50px;
-}   
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    margin-left: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
 
 .movie-info .name{
     font-size: 32px;
-    line-height: 40px;
-    font-weight: bold;
-    margin: 30px 0;
+    margin-bottom: 30px;
 }
 
 .movie-info .time{
-    margin-bottom: 20px;
-    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .movie-info .description{
@@ -61,4 +96,4 @@
     margin-left: 10px;
     background-color: var(--grey);
     color: var(--white);
-}
+} 
