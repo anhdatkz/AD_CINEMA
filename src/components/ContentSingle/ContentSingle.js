@@ -24,7 +24,7 @@ function ContentSingle(props){
         <>
         <div className="content-single">
             <div className="content__title">
-                <h4 className="title">Phim lẻ</h4>
+                <h3 className="title">Phim lẻ</h3>
             </div>
             <div className="content__box">
                 {movies.map(movie => {
