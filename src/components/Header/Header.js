@@ -4,6 +4,11 @@ import "./Header.css"
 
 
 function Header() {
+
+    const handleClick = ()=>{
+        
+    }
+    
     return (
         <header id="header">
             <div className="header-item">
@@ -16,7 +21,7 @@ function Header() {
                         <li className="nav__list-item active">
                             <Link to="/">Trang chủ</Link>
                         </li>
-                        <li className="nav__list-item">
+                        <li className="nav__list-item" onClick={handleClick}>
                             <Link to="/movies">Phim lẻ</Link>
                         </li>
                         <li className="nav__list-item">

@@ -1,0 +1,43 @@
+@import url(../style.css);
+.content-single{
+    margin-top: var(--header-height);
+    padding: 0 80px;
+}
+
+.content-single .content__title{
+    padding: 20px 0;
+}
+
+.title{
+    color: var(--green);
+}
+
+.content-single .content__box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.content-item{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.content-item .movie-poster{
+    width: 200px;
+    height: 300px;
+}
+
+.content-item .movie-name{
+    position: absolute;
+    bottom: 0;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.7) ;
+    padding: 5px 10px;
+    width: 100%;
+    height: 45px;
+    font-size: 12px;
+    overflow: hidden;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}

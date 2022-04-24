@@ -1,11 +1,13 @@
+import ContentSingle from "../components/ContentSingle/ContentSingle"
+import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
-import Slider from "../components/Slider/Slider"
 
 function Movies(){
     return(
         <>
         <Header/>
-        <Slider/>
+        <ContentSingle/>
+        <Footer/>
         </>
     )
 }

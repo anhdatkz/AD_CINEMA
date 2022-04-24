@@ -6,17 +6,16 @@ import {FaAngleRight, FaAngleLeft} from 'react-icons/fa'
 
 const contents = [ 'movies', 'tvshows', 'trending', 'watched']
 
-function ContentItem(){
-
+function ContentItem(props){
+    const {url, title} = props
     // const upComingURL =
     //     "https://api.themoviedb.org/3/movie/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1";
-    const upComingURL =
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1"
+    //const upComingURL = apiConfig.baseUrl +"movie/upcoming?api_key="+apiConfig.apiKey + "&language=en-US&page=1"
 
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch(upComingURL)
+        fetch(url)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data.results);
@@ -26,7 +25,7 @@ function ContentItem(){
 
 
     const next = document.querySelectorAll('.next')
-    const prev = document.querySelectorAll('.prev')
+    //const prev = document.querySelectorAll('.prev')
     const movieList = document.querySelectorAll('.list-movie')
     const numberItems = movies.length
     let clickCounter = 0
@@ -54,7 +53,7 @@ function ContentItem(){
     return(
         <div className="content__item">
             <div className="content__item-name">
-                <h2 className="content-title">Trending</h2>
+                <h2 className="content-title">{title}</h2>
                 <div className="watch-more">Xem thêm</div>
             </div>
             <div className="content__item-list">
@@ -67,7 +66,7 @@ function ContentItem(){
                                 src={apiConfig.w500Image(movie.poster_path)}
                                 alt=""
                             />
-                            <p className="movie-name">{movie.original_title}</p>
+                            <p className="movie-name">{movie.original_title || movie.name}</p>
                         </li>
                     ))}
                 </ul>
@@ -78,10 +77,13 @@ function ContentItem(){
 }
 
 function Content(props) {
+
     return (
         <div id="content">
-           <ContentItem/>
-           <ContentItem/>
+           <ContentItem url={apiConfig.trending} title="Trending Movies"/>
+           <ContentItem url={apiConfig.topRated} title="Top Rated"/>
+           <ContentItem url={apiConfig.popular} title="Popular Movies"/>
+           <ContentItem url={apiConfig.tvShows} title="TV Shows"/>
         </div>
     );
 }
