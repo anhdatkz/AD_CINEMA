@@ -3,7 +3,6 @@
 #slider{
     position: relative;
     margin-top: var(--header-height);
-    transition: all 1s ease;
 }
 
 #slider .slider-icon{

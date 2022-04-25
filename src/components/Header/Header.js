@@ -27,6 +27,9 @@ function Header() {
                         <li className="nav__list-item">
                             <Link to="/tv-series">TV Serries</Link>
                         </li>
+                        <li className="nav__list-item">
+                            <Link to="/detail">Chi tiết</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

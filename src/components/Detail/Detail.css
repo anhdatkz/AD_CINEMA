@@ -1,0 +1,86 @@
+@import url(../style.css);
+
+#detail{
+    margin-top: var(--header-height);
+}
+
+#detail .detail__box{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    color: var(--white);
+    padding-top: 50%;
+    position: relative; 
+}
+
+#detail .detail__box .movie-content{
+    position: absolute;
+    top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+.detail__box .movie-content .poster{
+    flex: 1;
+}
+
+.detail__box .poster img{
+    width: 300px;
+    height: 450px;
+    border-radius: 16px;
+    border: 1px solid var(--white);
+}
+
+.detail__box .movie-content .movie-info{
+    flex: 2;
+}
+
+.movie-info .movie-name{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.movie-info .description{
+    
+}
+
+.movie-info .realease-date{
+    margin-bottom: 20px;
+}
+
+.movie-info .movies-type{
+    list-style-type: none;
+    display: flex;
+}
+
+.movie-info .movies-type .type-item{
+    margin-right: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--white);
+    line-height: 28px;
+    padding: 0 10px;
+}
+
+.movie-info .movie-votes{
+    margin-bottom: 30px;
+}
+
+.movie-info .button-event button{
+    max-width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+button svg{
+    font-size: 16px;
+    margin-right: 15px;
+    transform: translateY(10%);
+    color: var(--black);
+}

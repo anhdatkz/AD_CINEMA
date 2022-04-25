@@ -4,15 +4,13 @@ import "./ContentSingle.css"
 
 
 function ContentSingle(props){
-    const upComingURL =
-        "https://api.themoviedb.org/3/movie/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1";
 
     const [currentMovie, setCurrentMovie] = useState(0);
 
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch(upComingURL)
+        fetch(props.url)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.results);
@@ -24,7 +22,7 @@ function ContentSingle(props){
         <>
         <div className="content-single">
             <div className="content__title">
-                <h3 className="title">Phim lẻ</h3>
+                <h3 className="title">{props.type}</h3>
             </div>
             <div className="content__box">
                 {movies.map(movie => {

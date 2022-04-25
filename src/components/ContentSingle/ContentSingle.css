@@ -26,6 +26,7 @@
 .content-item .movie-poster{
     width: 200px;
     height: 300px;
+    transition: all 0.5s ease-in-out;
 }
 
 .content-item .movie-name{
@@ -40,4 +41,10 @@
     overflow: hidden;
     font-weight: bold;
     transition: all 0.5s ease-in-out;
+}
+
+.content-item:hover .movie-name,
+.content-item:hover .movie-poster{
+    cursor: pointer;
+    transform: scale(1.1);
 }

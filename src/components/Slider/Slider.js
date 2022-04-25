@@ -1,7 +1,6 @@
 import "./Slider.css";
-import { FaPlay, FaInfoCircle } from "react-icons/fa";
+import { FaPlay, FaInfoCircle, FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
-import {FaAngleRight, FaAngleLeft} from 'react-icons/fa'
 import apiConfig from "../../api/apiConfigs";
 import { clear } from "@testing-library/user-event/dist/clear";
 
@@ -59,12 +58,12 @@ function Slider() {
                 return (
                     <>
                         {index === currentMovie && (
-                            <div className={index === currentMovie ? "slider-panel current" : "slider-panel"}
+                            <div className="slider-panel"
                                 style={{
-                                    backgroundImage: `url(
-                                    "${apiConfig.originalImage(movie.backdrop_path)}")`
+                                    backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 100%),
+                                    url("${apiConfig.originalImage(movie.backdrop_path)}")`
                                 }}
-                                key={index}>
+                                key={movie.id}>
                                 <div className="slider__content">
                                     <div className="movie-info">
                                         <div className="name">{movie.original_title}</div>
@@ -90,29 +89,6 @@ function Slider() {
                     </>
                 )
             })}
-            {/* <div className="slider__content">
-                    <div className="movie-info">
-                        <div className="name">Nhím Sonic 2</div>
-                        <div className="time">Ngày phát hành May 12</div>
-                        <div className="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum soluta
-                            error, quibusdam accusantium cum quia enim corrupti exercitationem
-                            ullam nulla aperiam! Officiis laudantium numquam nemo exercitationem
-                            et, illum animi beatae?
-                        </div>
-                    </div>
-
-                    <div className="movie-play">
-                        <button className="play">
-                            <FaPlay />
-                            Phát
-                        </button>
-                        <button className="about">
-                            <FaInfoCircle />
-                            Thông tin khác
-                        </button>
-                    </div>
-                </div> */}
         </div>
     );
 }
