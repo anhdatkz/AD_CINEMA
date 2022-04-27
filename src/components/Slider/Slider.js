@@ -2,7 +2,6 @@ import "./Slider.css";
 import { FaPlay, FaInfoCircle, FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
 import apiConfig from "../../api/apiConfigs";
-import { clear } from "@testing-library/user-event/dist/clear";
 
 function Slider() {
     const upComingURL =
