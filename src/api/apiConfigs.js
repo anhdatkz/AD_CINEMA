@@ -9,8 +9,10 @@ const apiConfig = {
     tvShows:"https://api.themoviedb.org/3/tv/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1",
     popular:"https://api.themoviedb.org/3/movie/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1",
     topRated:"https://api.themoviedb.org/3/movie/top_rated?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1",
+    similar: (id) => `https://api.themoviedb.org/3/movie/${id}/similar?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1`,
     movieApi: (id) => `https://www.2embed.ru/embed/tmdb/movie?id=${id}`,
-    tvshowApi: (id, season, episode) => `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${season}&e=${episode}`
+    tvshowApi: (id, season, episode) => `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${season}&e=${episode}`,
+    casts: (idMovie) => `https://api.themoviedb.org/3/movie/${idMovie}/casts?api_key=a687feda573208f21f2b6f1f4378035a`
 }
 
 

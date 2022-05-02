@@ -1,13 +1,13 @@
+
+import ContentCast from "../components/ContentCast/ContentCast"
 import Detail from "../components/Detail/Detail"
 import Footer from "../components/Footer/Footer"
-import Header from "../components/Header/Header"
 
-
-function Details(){
+function Details(props){
     return(
         <>
-        <Header/>
         <Detail/>
+        <ContentCast/>
         <Footer/>
         </>
     )

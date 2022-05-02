@@ -8,7 +8,7 @@ function TVSeries(){
 
     return(
         <>
-        <Header/>
+        {/* <Header/> */}
         <ContentSingle url={tvSeriesUrl} type="TV Series"/>
         <Footer/>
         </>

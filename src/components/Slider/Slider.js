@@ -62,7 +62,7 @@ function Slider() {
                                     backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 100%),
                                     url("${apiConfig.originalImage(movie.backdrop_path)}")`
                                 }}
-                                key={movie.id}>
+                                key={index}>
                                 <div className="slider__content">
                                     <div className="movie-info">
                                         <div className="name">{movie.original_title}</div>

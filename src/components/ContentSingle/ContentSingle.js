@@ -5,7 +5,7 @@ import "./ContentSingle.css"
 
 function ContentSingle(props){
 
-    const [currentMovie, setCurrentMovie] = useState(0);
+    // const [currentMovie, setCurrentMovie] = useState(0);
 
     const [movies, setMovies] = useState([]);
 
