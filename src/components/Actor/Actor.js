@@ -12,7 +12,6 @@ function Actor(props) {
             .then((res) => res.json())
             .then((data) => {
                 setActors(data.cast)
-                console.log(data.cast)
             })
     }, [])
 

@@ -13,7 +13,6 @@ function ContentItem(props){
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data.results);
                 setMovies(data.results);
             });
     }, []);
@@ -26,9 +25,9 @@ function ContentItem(props){
     let clickCounter = 0
 
 
-    const prevHandler = (index) => {
-        console.log(movieList)
-    }
+    // const prevHandler = (index) => {
+    //     console.log(movieList)
+    // }
 
     const nextHandler = next.forEach((item, index) => {
         item.addEventListener('click', () => {
@@ -42,7 +41,7 @@ function ContentItem(props){
                 clickCounter = 0
             }
         })
-        console.log(numberItems)
+        // console.log(numberItems)
     })
 
     return(
@@ -52,7 +51,7 @@ function ContentItem(props){
                 <div className="watch-more">Xem thêm</div>
             </div>
             <div className="content__item-list">
-                <div className="icon prev" onClick={prevHandler}><FaAngleLeft/></div>
+                {/* <div className="icon prev"><FaAngleLeft/></div> */}
                 <ul className="list-movie">
                     {movies.map((movie) => (
                         <li className="movie-item" key={movie.id}>

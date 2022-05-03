@@ -53,6 +53,7 @@
 .movie-info .movies-type{
     list-style-type: none;
     display: flex;
+    margin-bottom: 30px;
 }
 
 .movie-info .movies-type .type-item{
@@ -65,6 +66,14 @@
 
 .movie-info .movie-votes{
     margin-bottom: 30px;
+    color: var(--yellow);
+    font-size: 24px;
+}
+
+.movie-info .movie-votes svg{
+    font-size: 32px;
+    transform: translateY(25%);
+    color: var(--yellow);
 }
 
 .movie-info .button-event button{

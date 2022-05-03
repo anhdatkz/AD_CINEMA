@@ -50,7 +50,7 @@
 
 .nav .nav__list li{
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px;
     line-height: 32px;
 }
 
@@ -71,7 +71,7 @@
 .search{
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 50%;
     height: 60%;
     border: 1px solid var(--grey);
     border-radius: 8px;

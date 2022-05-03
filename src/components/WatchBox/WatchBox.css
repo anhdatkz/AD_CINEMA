@@ -1,0 +1,10 @@
+@import url("../style.css");
+
+.video-box{
+    margin-top: var(--header-height);
+}
+
+.video-box .video-player{
+    width: 900px;
+    height: 500px;
+}

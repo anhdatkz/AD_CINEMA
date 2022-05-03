@@ -10,7 +10,6 @@ function Movies(){
 
     return(
         <>
-        {/* <Header/> */}
         <ContentSingle url={moviesUrl} type="Phim lẻ"/>
         <Footer/>
         </>

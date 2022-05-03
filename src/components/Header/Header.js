@@ -30,6 +30,9 @@ function Header() {
                         <li className="nav__list-item">
                             <Link to="/detail">Chi tiết</Link>
                         </li>
+                        <li className="nav__list-item">
+                            <Link to="/watch">Xem phim</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
