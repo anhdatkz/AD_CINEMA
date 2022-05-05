@@ -12,7 +12,7 @@ function Detail(props) {
     const [genres, setGenres] = useState([])
 
     useEffect(() => {
-        fetch(apiConfig.detail("movie", 453395))
+        fetch(apiConfig.detail("movie", 634649))
             .then((res) => res.json())
             .then((data) => {
                 setGenres(data.genres)

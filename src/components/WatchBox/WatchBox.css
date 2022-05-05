@@ -1,10 +1,99 @@
 @import url("../style.css");
 
-.video-box{
+.watch-container{
+    padding: 30px 80px;
+    position: relative;
+}
+
+.movie-player{
+    width: 900px;
+}
+
+.movie-player .video-box{
     margin-top: var(--header-height);
 }
 
 .video-box .video-player{
     width: 900px;
     height: 500px;
+}
+
+.movie-watch-info{
+    margin: 20px 0;
+}
+
+.movie-watch-info .movie-name{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.movie-watch-info .movie-description{
+    margin-bottom: 20px;
+}
+
+.movie-watch-info .movie-release{
+    margin-bottom: 10px;
+}
+
+
+/* SIMILAR MOVIE */
+
+.movie-similar{
+    position: absolute;
+    top: calc(var(--header-height) + 30px);
+    right: 80px;
+    width: 250px;
+    height: 600px;
+}
+
+.similar-list{
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    overflow-y: scroll;
+}
+
+.similar-list::-webkit-scrollbar{
+    width: 5px;
+    background-color: var(--light-grey);
+}
+
+.similar-list::-webkit-scrollbar-thumb{
+    background-color: var(--grey);
+    border-radius: 5px;
+}
+
+.similar-item{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.similar-item .similar-movie-img{
+    width: 50px;
+    height: 90%;
+}
+
+.similar-item .similar-movie-img img{
+    width: 50px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.similar-item .similar-movie-info{
+    margin: 0 10px;
+    font-size: 12px;
+}
+
+.similar-movie-name{
+    color: var(--green);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.similar-movie-vote{
+    color: var(--yellow);
 }

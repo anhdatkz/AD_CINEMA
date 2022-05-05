@@ -8,7 +8,7 @@ function Actor(props) {
     const [actors, setActors] = useState([])
 
     useEffect(() => {
-        fetch("https://api.themoviedb.org/3/movie/453395/casts?api_key=a687feda573208f21f2b6f1f4378035a")
+        fetch(apiConfig.casts(634649))
             .then((res) => res.json())
             .then((data) => {
                 setActors(data.cast)
