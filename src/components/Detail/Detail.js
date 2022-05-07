@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import apiConfig from "../../api/apiConfigs";
 
@@ -7,12 +8,14 @@ import { FaImdb } from 'react-icons/fa'
 import './Detail.css'
 
 function Detail(props) {
+    const params = useParams()
+    const {type, id} = params
 
     const [movie, setMovie] = useState([])
     const [genres, setGenres] = useState([])
 
     useEffect(() => {
-        fetch(apiConfig.detail("movie", 634649))
+        fetch(apiConfig.detail(type, id))
             .then((res) => res.json())
             .then((data) => {
                 setGenres(data.genres)
@@ -39,7 +42,7 @@ function Detail(props) {
                                 {movie.overview}
                             </div>
                             <div className="realease-date">
-                                Ngày phát hành: {movie.release_date}
+                                Ngày phát hành: {(type === "movie") ? movie.release_date : movie.first_air_date}
                             </div>
                             <ul className="movies-type">
                                 {genres.map((genre) => (
@@ -51,7 +54,9 @@ function Detail(props) {
                                 {movie.vote_average} <FaImdb />
                             </div>
                             <div className="button-event">
-                                <button className="watch-now"><FaPlay />Xem ngay</button>
+                                <Link to={(type === "movie") ? `/watch/${type}/${id}` : `/watch/${type}/${id}/season=${1}/episode=${1}`}>
+                                    <button className="watch-now"><FaPlay />Xem ngay</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

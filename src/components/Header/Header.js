@@ -12,10 +12,12 @@ function Header() {
     return (
         <header id="header">
             <div className="header-item">
-                <div className="logo">
-                    <FaTv />
-                    <h1>AD CINEMA</h1>
-                </div>
+                <Link to="/">
+                    <div className="logo">
+                        <FaTv />
+                        <h1>AD CINEMA</h1>
+                    </div>
+                </Link>
                 <nav className="nav">
                     <ul className="nav__list">
                         <li className="nav__list-item active">
@@ -27,12 +29,12 @@ function Header() {
                         <li className="nav__list-item">
                             <Link to="/tv-series">TV Serries</Link>
                         </li>
-                        <li className="nav__list-item">
+                        {/* <li className="nav__list-item">
                             <Link to="/detail">Chi tiết</Link>
                         </li>
                         <li className="nav__list-item">
                             <Link to="/watch">Xem phim</Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             </div>

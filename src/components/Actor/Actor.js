@@ -1,16 +1,20 @@
 
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import apiConfig from '../../api/apiConfigs'
 import './Actor.css'
 
 function Actor(props) {
+    const param = useParams()
+    const {type, id} = param
 
     const [actors, setActors] = useState([])
 
     useEffect(() => {
-        fetch(apiConfig.casts(634649))
+        fetch(apiConfig.casts(type, id))
             .then((res) => res.json())
             .then((data) => {
+                console.log(data.cast)
                 setActors(data.cast)
             })
     }, [])

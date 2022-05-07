@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import apiConfig from '../../api/apiConfigs';
+import { Link } from 'react-router-dom';
 import "./ContentSingle.css"
 
 
@@ -22,22 +23,24 @@ function ContentSingle(props){
         <>
         <div className="content-single">
             <div className="content__title">
-                <h3 className="title">{props.type}</h3>
+                <h3 className="title">{props.title}</h3>
             </div>
-            <div className="content__box">
+            <ul className="content__box">
                 {movies.map(movie => {
                     return (
-                        <div className="content-item" key={movie.id}>
+                        <li className="content-item" key={movie.id}>
+                            <Link to={`/detail/${props.type}/${movie.id}`}>
                             <img
                                 className="movie-poster"
                                 src={apiConfig.w500Image(movie.poster_path)}
                                 alt=""
                             />
                             <p className="movie-name">{movie.original_title || movie.name}</p>
-                        </div>
+                            </Link>
+                        </li>
                     )
                 })}
-            </div>
+            </ul>
         </div>
         </>
     )

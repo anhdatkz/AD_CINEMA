@@ -3,9 +3,10 @@ import apiConfig from "../../api/apiConfigs";
 import {FaAngleRight, FaAngleLeft} from 'react-icons/fa'
 
 import '../ContentItem/ContentItem.css'
+import { Link } from "react-router-dom";
 
 function ContentItem(props){
-    const {url, title} = props
+    const {url, title, type} = props
 
     const [movies, setMovies] = useState([]);
 
@@ -55,12 +56,14 @@ function ContentItem(props){
                 <ul className="list-movie">
                     {movies.map((movie) => (
                         <li className="movie-item" key={movie.id}>
-                            <img
-                                className="movie-poster"
-                                src={apiConfig.w500Image(movie.poster_path)}
-                                alt=""
-                            />
-                            <p className="movie-name">{movie.original_title || movie.name}</p>
+                            <Link to={`/detail/${type}/${movie.id}`}>
+                                <img
+                                    className="movie-poster"
+                                    src={apiConfig.w500Image(movie.poster_path)}
+                                    alt=""
+                                />
+                                <p className="movie-name">{movie.original_title || movie.name}</p>
+                            </Link>
                         </li>
                     ))}
                 </ul>

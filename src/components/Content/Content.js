@@ -5,19 +5,28 @@ import ContentItem from "../ContentItem/ContentItem";
 import "./Content.css";
 
 function Content(props) {
-    const contents = {
+    const types = ["movie", "tv"]
+    const movies = {
         trending: "Trending Movies",
-        topRated: "Top Rated",
+        topRated: "Top Rated Movie",
         popular: "Popular Movies",
-        tvShows: "TV Shows",
     }
+
+    const tv = {
+        trending: "Trending TV Shows",
+        topRated: "Top Rated TV Shows",
+        popular: "Popular TV Shows",
+    }
+
 
     return (
         <div id="content">
-            <ContentItem url={apiConfig.trending} title={contents.trending}/>
-            <ContentItem url={apiConfig.topRated} title={contents.topRated}/>
-            <ContentItem url={apiConfig.popular} title={contents.popular}/>
-            <ContentItem url={apiConfig.tvShows} title={contents.tvShows}/>
+            <ContentItem url={apiConfig.trending(types[0])} title={movies.trending} type={types[0]}/>
+            <ContentItem url={apiConfig.topRated(types[0])} title={movies.topRated} type={types[0]} />
+            <ContentItem url={apiConfig.popular(types[0])} title={movies.popular} type={types[0]} />
+            <ContentItem url={apiConfig.trending(types[1])} title={tv.trending} type={types[1]}/>
+            <ContentItem url={apiConfig.topRated(types[1])} title={tv.topRated} type={types[1]} />
+            <ContentItem url={apiConfig.popular(types[1])} title={tv.popular} type={types[1]} />
         </div>
     );
 }

@@ -55,14 +55,15 @@ function Slider() {
             <div className="slider-icon right" onClick={nextSlider}><FaAngleRight /></div>
             {movies.map((movie, index) => {
                 return (
-                    <>
+                    <div key={index}>
                         {index === currentMovie && (
-                            <div className="slider-panel"
+                            <div
+                            className="slider-panel"
                                 style={{
                                     backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 100%),
                                     url("${apiConfig.originalImage(movie.backdrop_path)}")`
                                 }}
-                                key={index}>
+                        >
                                 <div className="slider__content">
                                     <div className="movie-info">
                                         <div className="name">{movie.original_title}</div>
@@ -85,7 +86,7 @@ function Slider() {
                                 </div>
                             </div>
                         )}
-                    </>
+                    </div>
                 )
             })}
         </div>
