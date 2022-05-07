@@ -20,7 +20,7 @@ function Header() {
                 </Link>
                 <nav className="nav">
                     <ul className="nav__list">
-                        <li className="nav__list-item active">
+                        <li className="nav__list-item">
                             <Link to="/">Trang chủ</Link>
                         </li>
                         <li className="nav__list-item" onClick={handleClick}>
