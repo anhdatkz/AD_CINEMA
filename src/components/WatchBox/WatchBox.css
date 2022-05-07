@@ -64,7 +64,7 @@
     border-radius: 5px;
 }
 
-.similar-item{
+.similar-item a{
     width: 100%;
     height: 100px;
     display: flex;
