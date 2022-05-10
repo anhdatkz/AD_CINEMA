@@ -7,3 +7,19 @@
 html{
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.scroll-top{
+    position: fixed;
+    right: 20px;
+    bottom: calc(var(--header-height) + 20px);
+}
+
+.scroll-top svg{
+    font-size: 32px;
+    color: var(--green);
+}
+
+.scroll-top:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}

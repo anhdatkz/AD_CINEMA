@@ -6,16 +6,16 @@ import Watch from './pages/Watch'
 
 
 const publicRoutes = [
-    {path: "/", component: Home},
-    {path: "/movies", component: Movies},
-    {path: "/tv-series", component: TVSeries},
-    {path: "/detail/:type/:id", component: Details},
-    {path: "/watch/:type/:id", component: Watch},
-    {path: "/watch/:type/:id/season=:season/episode=:episode", component: Watch},
+    { path: "/", component: Home },
+    { path: "/movies", component: Movies },
+    { path: "/tv-series", component: TVSeries },
+    { path: "/detail/:type/:id", component: Details },
+    { path: "/watch/:type/:id", component: Watch },
+    { path: "/watch/:type/:id/season=:season/episode=:episode", component: Watch },
 ]
 
 const privateRoutes = [
     {}
 ]
 
-export {publicRoutes, privateRoutes}
+export { publicRoutes, privateRoutes }

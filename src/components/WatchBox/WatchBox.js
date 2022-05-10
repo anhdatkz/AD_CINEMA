@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import apiConfig from '../../api/apiConfigs'
 import './WatchBox.css'
 
 
+
 function WatchBox(props) {
-    const {type, id} = useParams()
+    const { type, id } = useParams()
     const [movie, setMovie] = useState({})
     const [similar, setSimilar] = useState([])
 
     useEffect(() => {
-        fetch(apiConfig.detail(type,id))
+        fetch(apiConfig.detail(type, id))
             .then((res) => res.json())
             .then((data) => {
                 setMovie(data)
@@ -24,25 +25,25 @@ function WatchBox(props) {
                 console.log(data.results);
                 setSimilar(data.results);
             });
-    },[]);
+    }, []);
 
     return (
         <>
-        <div className="watch-container">
-            <div className="movie-player">
-                <div className='video-box'>
-                    <iframe width="900" height="500"
-                        src={(type === "movie") ? apiConfig.movieApi(id) : apiConfig.tvshowApi(id, 1, 1)} allowFullScreen>
-                    </iframe>
+            <div className="watch-container">
+                <div className="movie-player">
+                    <div className='video-box'>
+                        <iframe width="900" height="500"
+                            src={(type === "movie") ? apiConfig.movieApi(id) : apiConfig.tvshowApi(id, 1, 1)} allowFullScreen>
+                        </iframe>
+                    </div>
+                    <div className="movie-watch-info">
+                        <div className="movie-name">{movie.name || movie.original_title}</div>
+                        <div className="movie-description">{movie.overview}</div>
+                        <div className="movie-release">Release-date: {(type === "movie") ? movie.release_date : movie.first_air_date}</div>
+                        <div className="movie-runtime">Run time: {(type === "movie") ? movie.runtime : movie.episode_run_time}'</div>
+                    </div>
                 </div>
-                <div className="movie-watch-info">
-                    <div className="movie-name">{movie.name || movie.original_title}</div>
-                    <div className="movie-description">{movie.overview}</div>
-                    <div className="movie-release">Release-date: {(type === "movie") ? movie.release_date : movie.first_air_date}</div>
-                    <div className="movie-runtime">Run time: {(type === "movie") ? movie.runtime : movie.episode_run_time}'</div>
-                </div>
-            </div>
-            <div className="movie-similar">
+                <div className="movie-similar">
                     <ul className="similar-list">
                         {similar.map((movie, index) => (
                             <li className="similar-item" key={index}>
@@ -58,8 +59,8 @@ function WatchBox(props) {
                             </li>
                         ))}
                     </ul>
+                </div>
             </div>
-        </div>
         </>
     )
 }

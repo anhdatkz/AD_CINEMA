@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import apiConfig from "../../api/apiConfigs";
@@ -42,7 +42,7 @@ function Detail(props) {
                                 {movie.overview}
                             </div>
                             <div className="realease-date">
-                                Ngày phát hành: {(type === "movie") ? movie.release_date : movie.first_air_date}
+                                Release date: {(type === "movie") ? movie.release_date : movie.first_air_date}
                             </div>
                             <ul className="movies-type">
                                 {genres.map((genre) => (
@@ -50,6 +50,11 @@ function Detail(props) {
                                 ))}
                                 {/* <li className="type-item">{console.log(genres)}</li> */}
                             </ul>
+                            {(type === "movie") ? <Fragment/> : (
+                                <Fragment>
+                                    <div className="number-of-ep">Number of eps: {movie.number_of_episodes}</div>
+                                </Fragment>
+                            )}
                             <div className="movie-votes">
                                 {movie.vote_average} <FaImdb />
                             </div>

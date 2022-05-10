@@ -41,6 +41,9 @@ function ContentSingle(props){
                     )
                 })}
             </ul>
+            <div className="load-more">
+                <button className='load-more-btn'>Load more</button>
+            </div>
         </div>
         </>
     )

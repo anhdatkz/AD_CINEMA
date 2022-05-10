@@ -80,6 +80,14 @@
     font-weight: bold;
 }
 
+.movie-play .play a{
+    color: var(--black);
+}
+
+.movie-play .about:hover,
+.movie-play .play:hover{
+    opacity: 0.8;
+}
 
 .movie-play svg{
     font-size: 16px;
@@ -92,7 +100,10 @@
 }
 
 .movie-play .about{
-    margin-left: 10px;
+    margin-left: 20px;
     background-color: var(--grey);
-    color: var(--white);
 } 
+
+.movie-play .about a{
+    color: var(--white);
+}

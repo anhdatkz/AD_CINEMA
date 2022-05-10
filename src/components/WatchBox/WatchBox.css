@@ -88,6 +88,10 @@
     font-size: 12px;
 }
 
+.number-of-ep{
+    margin-bottom: 20px;
+}
+
 .similar-movie-name{
     color: var(--green);
     font-weight: bold;

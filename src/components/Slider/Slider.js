@@ -2,8 +2,10 @@ import "./Slider.css";
 import { FaPlay, FaInfoCircle, FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import React, { useState, useEffect } from "react";
 import apiConfig from "../../api/apiConfigs";
+import { Link } from "react-router-dom";
 
 function Slider() {
+
     const upComingURL =
         "https://api.themoviedb.org/3/movie/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1";
 
@@ -75,12 +77,16 @@ function Slider() {
 
                                     <div className="movie-play">
                                         <button className="play">
-                                            <FaPlay />
-                                            Phát
+                                            <Link to={`/watch/movie/${movie.id}`}>
+                                                <FaPlay />
+                                                Phát
+                                            </Link>
                                         </button>
                                         <button className="about">
-                                            <FaInfoCircle />
-                                            Thông tin khác
+                                            <Link to={`/detail/movie/${movie.id}`}>
+                                                <FaInfoCircle />
+                                                Thông tin khác
+                                            </Link>
                                         </button>
                                     </div>
                                 </div>
