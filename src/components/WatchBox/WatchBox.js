@@ -4,10 +4,36 @@ import apiConfig from '../../api/apiConfigs'
 import './WatchBox.css'
 
 
+function Episode(props){
+
+    const scrollTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+
+    let arrEps = new Array(props.eps).fill(0)
+    return(
+        <div className="episode-box">
+            <div><span>Episodes:</span></div>
+            <ul className="episode-list">
+                {arrEps.map((ep, index) => (
+                    <li className="episode-item" key={index}>
+                        <Link to={`/watch/tv/${props.id}/season=${1}/episode=${index + 1}`}>
+                            <button onClick={scrollTop}>{index + 1}</button>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
 
 function WatchBox(props) {
-    const { type, id } = useParams()
+    const { type, id, episode } = useParams()
     const [movie, setMovie] = useState({})
+    const [episodes, setEpisodes] = useState(1)
     const [similar, setSimilar] = useState([])
 
     useEffect(() => {
@@ -15,6 +41,8 @@ function WatchBox(props) {
             .then((res) => res.json())
             .then((data) => {
                 setMovie(data)
+                setEpisodes(data.number_of_episodes)
+                console.log(data.number_of_episodes);
             })
     }, [])
 
@@ -33,15 +61,16 @@ function WatchBox(props) {
                 <div className="movie-player">
                     <div className='video-box'>
                         <iframe width="900" height="500"
-                            src={(type === "movie") ? apiConfig.movieApi(id) : apiConfig.tvshowApi(id, 1, 1)} allowFullScreen>
+                            src={(type === "movie") ? apiConfig.movieApi(id) : apiConfig.tvshowApi(id, 1, episode)} allowFullScreen>
                         </iframe>
                     </div>
                     <div className="movie-watch-info">
                         <div className="movie-name">{movie.name || movie.original_title}</div>
                         <div className="movie-description">{movie.overview}</div>
-                        <div className="movie-release">Release-date: {(type === "movie") ? movie.release_date : movie.first_air_date}</div>
-                        <div className="movie-runtime">Run time: {(type === "movie") ? movie.runtime : movie.episode_run_time}'</div>
+                        <div className="movie-release"><span>Release-date: </span> {(type === "movie") ? movie.release_date : movie.first_air_date}</div>
+                        <div className="movie-runtime"><span>Run time: </span>{(type === "movie") ? movie.runtime : movie.episode_run_time}'</div>
                     </div>
+                    {(type === "movie") ? <Fragment/> : <Episode eps ={episodes} id={id}/>}
                 </div>
                 <div className="movie-similar">
                     <ul className="similar-list">

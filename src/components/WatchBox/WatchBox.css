@@ -101,3 +101,32 @@
 .similar-movie-vote{
     color: var(--yellow);
 }
+
+
+.episode-box{
+
+}
+
+.episode-list{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+.episode-list .episode-item{
+    list-style: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.episode-list .episode-item button{
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.episode-list .episode-item button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}

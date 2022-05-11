@@ -19,6 +19,7 @@ function Detail(props) {
             .then((res) => res.json())
             .then((data) => {
                 setGenres(data.genres)
+                console.log(data.number_of_episodes);
                 setMovie(data)
             })
     }, [])
@@ -42,7 +43,7 @@ function Detail(props) {
                                 {movie.overview}
                             </div>
                             <div className="realease-date">
-                                Release date: {(type === "movie") ? movie.release_date : movie.first_air_date}
+                                <span>Release date:</span> {(type === "movie") ? movie.release_date : movie.first_air_date}
                             </div>
                             <ul className="movies-type">
                                 {genres.map((genre) => (
@@ -52,7 +53,7 @@ function Detail(props) {
                             </ul>
                             {(type === "movie") ? <Fragment/> : (
                                 <Fragment>
-                                    <div className="number-of-ep">Number of eps: {movie.number_of_episodes}</div>
+                                    <div className="number-of-ep"><span>Number of eps:</span> {movie.number_of_episodes}</div>
                                 </Fragment>
                             )}
                             <div className="movie-votes">

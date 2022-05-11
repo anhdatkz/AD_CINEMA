@@ -9,6 +9,9 @@ function ContentSingle(props){
     // const [currentMovie, setCurrentMovie] = useState(0);
 
     const [movies, setMovies] = useState([]);
+    const [pages, setPages] = useState(1)
+    const [page, setPage] = useState(1)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         fetch(props.url)
@@ -18,6 +21,10 @@ function ContentSingle(props){
                 setMovies(data.results);
             });
     },[]);
+
+    const LoadMore = () => {
+        return setPage(page+1)
+    }
 
     return(
         <>
@@ -42,7 +49,7 @@ function ContentSingle(props){
                 })}
             </ul>
             <div className="load-more">
-                <button className='load-more-btn'>Load more</button>
+                <button className='load-more-btn' onClick={LoadMore}>Load more</button>
             </div>
         </div>
         </>
