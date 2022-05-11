@@ -14,7 +14,7 @@ function Header() {
     return (
         <header id="header">
             <div className="header-item">
-                <Link to="/">
+                <Link to="/" onClick={() => handleClick(1)}>
                     <div className="logo">
                         <FaTv />
                         <h1>AD CINEMA</h1>
