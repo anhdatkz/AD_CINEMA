@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import apiConfig from "../../api/apiConfigs";
 import {FaAngleRight, FaAngleLeft} from 'react-icons/fa'
+import { scrollTop } from "../../App";
 
 import '../ContentItem/ContentItem.css'
 import { Link } from "react-router-dom";
@@ -55,7 +56,7 @@ function ContentItem(props){
                 {/* <div className="icon prev"><FaAngleLeft/></div> */}
                 <ul className="list-movie">
                     {movies.map((movie) => (
-                        <li className="movie-item" key={movie.id}>
+                        <li className="movie-item" key={movie.id} onClick={scrollTop}>
                             <Link to={`/detail/${type}/${movie.id}`}>
                                 <img
                                     className="movie-poster"

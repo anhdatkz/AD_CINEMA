@@ -17,7 +17,7 @@ function Actor(props) {
                 console.log(data.cast)
                 setActors(data.cast)
             })
-    }, [])
+    }, [param])
 
     return (
         <>

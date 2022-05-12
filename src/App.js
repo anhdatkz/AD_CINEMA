@@ -10,6 +10,14 @@ import { FaRegArrowAltCircleUp } from "react-icons/fa"
 import './App.css';
 import Header from './components/Header/Header';
 
+const scrollTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+export {scrollTop}
 
 function App() {
   const scrollTop = () => {
