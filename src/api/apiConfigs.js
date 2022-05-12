@@ -7,7 +7,7 @@ const apiConfig = {
     trending:(type) => `https://api.themoviedb.org/3/trending/${type}/week?api_key=a687feda573208f21f2b6f1f4378035a`,
     movie: "",
     tvShows:"https://api.themoviedb.org/3/tv/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1",
-    popular:(type) =>`https://api.themoviedb.org/3/${type}/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1`,
+    popular:(type, page) =>`https://api.themoviedb.org/3/${type}/popular?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=${page}`,
     topRated:(type) =>`https://api.themoviedb.org/3/${type}/top_rated?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1`,
     similar: (type, id) => `https://api.themoviedb.org/3/${type}/${id}/similar?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=1`,
     movieApi: (id) => `https://www.2embed.ru/embed/tmdb/movie?id=${id}`,

@@ -5,6 +5,7 @@ import "./ContentSingle.css"
 
 
 function ContentSingle(props){
+    const {title, type} = props
 
     // const [currentMovie, setCurrentMovie] = useState(0);
 
@@ -14,13 +15,13 @@ function ContentSingle(props){
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        fetch(props.url)
+        fetch(apiConfig.popular(type, page))
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.results);
-                setMovies(data.results);
+                setMovies([...movies,...data.results]);
             });
-    },[]);
+    },[page]);
 
     const LoadMore = () => {
         return setPage(page+1)
@@ -30,13 +31,13 @@ function ContentSingle(props){
         <>
         <div className="content-single">
             <div className="content__title">
-                <h3 className="title">{props.title}</h3>
+                <h3 className="title">{title}</h3>
             </div>
             <ul className="content__box">
                 {movies.map(movie => {
                     return (
                         <li className="content-item" key={movie.id}>
-                            <Link to={`/detail/${props.type}/${movie.id}`}>
+                            <Link to={`/detail/${type}/${movie.id}`}>
                             <img
                                 className="movie-poster"
                                 src={apiConfig.w500Image(movie.poster_path)}

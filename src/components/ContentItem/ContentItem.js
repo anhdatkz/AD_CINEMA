@@ -49,7 +49,7 @@ function ContentItem(props){
         <div className="content__item">
             <div className="content__item-name">
                 <h2 className="content-title">{title}</h2>
-                <div className="watch-more">Xem thêm</div>
+                <div className="watch-more">Watch more</div>
             </div>
             <div className="content__item-list">
                 {/* <div className="icon prev"><FaAngleLeft/></div> */}

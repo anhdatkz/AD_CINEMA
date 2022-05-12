@@ -23,10 +23,10 @@ function Header() {
                 <nav className="nav">
                     <ul className="nav__list">
                         <li className={navState === 1 ? "nav__list-item  active" : "nav__list-item"} onClick={() => handleClick(1)}>
-                            <Link to="/">Trang chủ</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li className={navState === 2 ? "nav__list-item  active" : "nav__list-item"} onClick={() => handleClick(2)}>
-                            <Link to="/movies">Phim lẻ</Link>
+                            <Link to="/movies">Movies</Link>
                         </li>
                         <li className={navState === 3 ? "nav__list-item  active" : "nav__list-item"} onClick={() => handleClick(3)}>
                             <Link to="/tv-series">TV Serries</Link>
@@ -43,10 +43,10 @@ function Header() {
             <div className="header-item">
                 <div className="search">
                     <FaSearch />
-                    <input type="text" placeholder="Phim, diễn viên, thể loại..." />
+                    <input type="text" placeholder="Movies, actor, genres..." />
                 </div>
                 <div className="login">
-                    Đăng nhập
+                    Login
                 </div>
             </div>
         </header>

@@ -69,7 +69,7 @@ function Slider() {
                                 <div className="slider__content">
                                     <div className="movie-info">
                                         <div className="name">{movie.original_title}</div>
-                                        <div className="time">Ngày phát hành: {movie.release_date}</div>
+                                        <div className="time"><span>Release date:</span> {movie.release_date}</div>
                                         <div className="description">
                                             {movie.overview}
                                         </div>
@@ -79,13 +79,13 @@ function Slider() {
                                         <button className="play">
                                             <Link to={`/watch/movie/${movie.id}`}>
                                                 <FaPlay />
-                                                Phát
+                                                Play
                                             </Link>
                                         </button>
                                         <button className="about">
                                             <Link to={`/detail/movie/${movie.id}`}>
                                                 <FaInfoCircle />
-                                                Thông tin khác
+                                                More info
                                             </Link>
                                         </button>
                                     </div>

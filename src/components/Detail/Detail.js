@@ -22,7 +22,7 @@ function Detail(props) {
                 console.log(data.number_of_episodes);
                 setMovie(data)
             })
-    }, [])
+    }, [params])
 
     return (
         <>
@@ -61,7 +61,7 @@ function Detail(props) {
                             </div>
                             <div className="button-event">
                                 <Link to={(type === "movie") ? `/watch/${type}/${id}` : `/watch/${type}/${id}/season=${1}/episode=${1}`}>
-                                    <button className="watch-now"><FaPlay />Xem ngay</button>
+                                    <button className="watch-now"><FaPlay />Play now</button>
                                 </Link>
                             </div>
                         </div>

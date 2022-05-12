@@ -7,10 +7,9 @@ import { Route, Routes, Router } from 'react-router-dom'
 import {publicRoutes} from "./Routes"
 import { FaRegArrowAltCircleUp } from "react-icons/fa"
 
-
-
 import './App.css';
 import Header from './components/Header/Header';
+
 
 function App() {
   const scrollTop = () => {
