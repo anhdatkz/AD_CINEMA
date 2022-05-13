@@ -1,25 +1,28 @@
 import {useState, useEffect} from 'react'
 import apiConfig from '../../api/apiConfigs';
 import { Link } from 'react-router-dom';
+import { scrollTop } from '../../App';
+import { useParams } from 'react-router-dom';
 import "./ContentSingle.css"
 
 
 function ContentSingle(props){
-    const {title, type} = props
+    const {title, type, form} = props
+    const {query} = useParams()
 
     // const [currentMovie, setCurrentMovie] = useState(0);
 
     const [movies, setMovies] = useState([]);
     const [pages, setPages] = useState(1)
     const [page, setPage] = useState(1)
-    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        fetch(apiConfig.popular(type, page))
+        fetch((form === "single") ? apiConfig.popular(type, page) : apiConfig.search(query, page))
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.results);
                 setMovies([...movies,...data.results]);
+                setPages(data.total_pages)
             });
     },[page]);
 
@@ -31,16 +34,16 @@ function ContentSingle(props){
         <>
         <div className="content-single">
             <div className="content__title">
-                <h3 className="title">{title}</h3>
+                <h3 className="title">{(form === "single") ? `${title}`: `${title} "${query}"`}</h3>
             </div>
             <ul className="content__box">
-                {movies.map(movie => {
+                {movies.map((movie, index) => {
                     return (
-                        <li className="content-item" key={movie.id}>
-                            <Link to={`/detail/${type}/${movie.id}`}>
+                        <li className="content-item" key={index} onClick={scrollTop}>
+                            <Link to={`/detail/${type || movie.media_type}/${movie.id}`}>
                             <img
                                 className="movie-poster"
-                                src={apiConfig.w500Image(movie.poster_path)}
+                                src={(movie.poster_path) ? apiConfig.w500Image(movie.poster_path) : apiConfig.errPoster}
                                 alt=""
                             />
                             <p className="movie-name">{movie.original_title || movie.name}</p>

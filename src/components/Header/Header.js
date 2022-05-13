@@ -1,19 +1,35 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaTv, FaSearch } from 'react-icons/fa'
+import { scrollTop } from '../../App'
 import "./Header.css"
 import { useState } from 'react'
 
 
 function Header() {
     const [navState, setNavStatte] = useState(1)
+    const [query, setQuery] = useState('')
+
+    let navigate = useNavigate()
 
     const handleClick = (index)=>{
         setNavStatte(index)
     }
+
+    const onSubmitSearch = (e) => {
+        e.preventDefault()
+        if(query.trim() === "") return;
+
+        navigate(`/search/all/query=${query}`)
+        setQuery("")
+    }
+
+    const onChangeQuery = (e) => {
+        setQuery(e.target.value)
+    }
     
     return (
         <header id="header">
-            <div className="header-item">
+            <div className="header-item" onClick={scrollTop}>
                 <Link to="/" onClick={() => handleClick(1)}>
                     <div className="logo">
                         <FaTv />
@@ -31,20 +47,19 @@ function Header() {
                         <li className={navState === 3 ? "nav__list-item  active" : "nav__list-item"} onClick={() => handleClick(3)}>
                             <Link to="/tv-series">TV Serries</Link>
                         </li>
-                        {/* <li className="nav__list-item">
-                            <Link to="/detail">Chi tiết</Link>
-                        </li>
-                        <li className="nav__list-item">
-                            <Link to="/watch">Xem phim</Link>
-                        </li> */}
                     </ul>
                 </nav>
             </div>
             <div className="header-item">
-                <div className="search">
+                <form className="search" onSubmit={onSubmitSearch}>
                     <FaSearch />
-                    <input type="text" placeholder="Movies, actor, genres..." />
-                </div>
+                    <input
+                        onChange={onChangeQuery}
+                        value={query}
+                        type="text" 
+                        placeholder="Movies, actor, genres..."
+                    />
+                </form>
                 <div className="login">
                     Login
                 </div>

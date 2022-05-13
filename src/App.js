@@ -1,8 +1,3 @@
-import Home from './pages/Home'
-import TVSeries from './pages/TVSeries'
-import Movies from './pages/Movies'
-import Details from './pages/Details'
-import Watch from './pages/Watch'
 import { Route, Routes, Router } from 'react-router-dom'
 import {publicRoutes} from "./Routes"
 import { FaRegArrowAltCircleUp } from "react-icons/fa"

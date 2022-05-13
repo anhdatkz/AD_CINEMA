@@ -27,7 +27,7 @@ function Actor(props) {
                     {actors.map((actor) => (
                         <li className="actor" key={actor.id}>
                             <div className="actor-img">
-                                <img src={apiConfig.w500Image(actor.profile_path)} alt="" />
+                                <img src={(actor.profile_path) ? apiConfig.w500Image(actor.profile_path) : apiConfig.errActor} alt="" />
                             </div>
                             <div className="actor-name">{actor.name || actor.original_name }</div>
                             <div className="actor-character">{actor.character}</div>

@@ -3,6 +3,7 @@ import { FaPlay, FaInfoCircle, FaAngleRight, FaAngleLeft } from "react-icons/fa"
 import React, { useState, useEffect } from "react";
 import apiConfig from "../../api/apiConfigs";
 import { Link } from "react-router-dom";
+import { scrollTop } from "../../App";
 
 function Slider() {
 
@@ -76,13 +77,13 @@ function Slider() {
                                     </div>
 
                                     <div className="movie-play">
-                                        <button className="play">
+                                        <button className="play" onClick={scrollTop}>
                                             <Link to={`/watch/movie/${movie.id}`}>
                                                 <FaPlay />
                                                 Play
                                             </Link>
                                         </button>
-                                        <button className="about">
+                                        <button className="about" onClick={scrollTop}>
                                             <Link to={`/detail/movie/${movie.id}`}>
                                                 <FaInfoCircle />
                                                 More info

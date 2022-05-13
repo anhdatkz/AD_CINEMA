@@ -1,17 +1,11 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import apiConfig from '../../api/apiConfigs'
+import { scrollTop } from '../../App'
 import './WatchBox.css'
 
 
 function Episode(props){
-
-    const scrollTop = () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      };
 
     let arrEps = new Array(props.eps).fill(0)
     return(
@@ -82,7 +76,7 @@ function WatchBox(props) {
                                     </div>
                                     <div className="similar-movie-info">
                                         <div className="similar-movie-name">{(type === "movie") ? (movie.title || movie.original_title) : (movie.name || movie.original_name)}</div>
-                                        <div className="similar-movie-vote">Vote avg: {movie.vote_average}</div>
+                                        <div className="similar-movie-vote"><span>Vote avg:</span> {Number(movie.vote_average).toFixed(1)}</div>
                                     </div>
                                 </Link>
                             </li>

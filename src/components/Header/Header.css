@@ -15,7 +15,7 @@ a{
     height: var(--header-height);
     width: 100%;
     border-bottom: 1px solid var(--light-grey);
-    z-index: 7;
+    z-index: 1;
 }
 
 #header .header-item{

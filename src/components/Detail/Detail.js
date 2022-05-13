@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
 import apiConfig from "../../api/apiConfigs";
+import { scrollTop } from "../../App";
 
 import { FaImdb } from 'react-icons/fa'
 
@@ -61,7 +62,7 @@ function Detail(props) {
                             </div>
                             <div className="button-event">
                                 <Link to={(type === "movie") ? `/watch/${type}/${id}` : `/watch/${type}/${id}/season=${1}/episode=${1}`}>
-                                    <button className="watch-now"><FaPlay />Play now</button>
+                                    <button className="watch-now" onClick={scrollTop}><FaPlay />Play now</button>
                                 </Link>
                             </div>
                         </div>

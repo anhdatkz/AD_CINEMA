@@ -1,14 +1,14 @@
 import ContentSingle from "../components/ContentSingle/ContentSingle"
 import Footer from "../components/Footer/Footer"
 
-function Movies(){
+function Search(){
 
     return(
         <>
-        <ContentSingle title="Phim lẻ" type="movie" form="single"/>
+        <ContentSingle title="Results for" form="search"/>
         <Footer/>
         </>
     )
 }
 
-export default Movies
+export default Search
