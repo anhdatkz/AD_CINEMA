@@ -44,7 +44,7 @@
     top: calc(var(--header-height) + 30px);
     right: 80px;
     width: 250px;
-    height: 600px;
+    height: 500px;
 }
 
 .similar-list{
