@@ -68,7 +68,7 @@
 }
 
 .content__item-list .list-movie .movie-item{
-    margin-right: 30px;
+    margin-right: 20px;
     position: relative;
 }
 
@@ -99,4 +99,14 @@
     overflow: hidden;
     font-weight: bold;
     transition: all 0.5s ease-in-out;
+}
+
+
+/* Mobile width < 740px */
+/* RESPONSIVE */
+@media screen  and (max-width: 46.1875em){
+    .content__item{
+     
+    }   
+    
 }

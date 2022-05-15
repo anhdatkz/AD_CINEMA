@@ -37,3 +37,26 @@
     color: var(--green);
     width: 200px;
 }
+
+
+
+@media screen  and (max-width: 46.1875em){
+    .actors__list .actor .actor-img{
+        width: 90px;
+        height: 150px;
+    }
+
+    .actors__list .actor{
+        margin-bottom: 10px;
+        height: 200px;
+        margin-right: 10px;
+    }
+
+    .actors__list .actor .actor-name{
+        width: 90px;
+    }
+
+    .actors__list .actor .actor-character{
+        width: 90px;
+    }
+}

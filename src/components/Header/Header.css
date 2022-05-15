@@ -93,7 +93,7 @@ a{
     height: 100%;
     width: 90%;
     padding: 0 10px;
-    font-weight: bold;
+        
     font-size: 14px;
     border-radius: 8px;
     color: var(--light-black);
@@ -115,4 +115,31 @@ a{
     cursor: pointer;
     background-color: var(--green);
     opacity: 0.9;
+}
+
+/* Mobile width < 740px */
+/* RESPONSIVE */
+@media screen  and (max-width: 46.1875em){
+    #header{
+        overflow: hidden;
+    }
+
+    .login,
+    #header .nav{
+        display: none;
+    }
+    
+    #header .logo svg{
+        font-size: 24px;
+    }
+
+    #header .logo h1{
+        padding: 0 10px;
+        font-size: 20px;
+    }
+
+    .search{
+        width: 90%;
+    }
+    
 }

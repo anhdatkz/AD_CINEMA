@@ -10,7 +10,7 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 30px;
+    border-radius: 50%;
 }
 
 #slider .slider-icon:hover{
@@ -106,4 +106,34 @@
 
 .movie-play .about a{
     color: var(--white);
+}
+
+
+/* Mobile width < 740px */
+/* RESPONSIVE */
+@media screen  and (max-width: 46.1875em){
+    .slider__content{
+        width: 70%;
+        margin-left: 60px;
+    }
+
+    #slider .slider-icon svg{
+        font-size: 30px;
+    }
+
+    .slider__content .movie-info .name{
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .slider__content .movie-info .description,
+    .slider__content .movie-info .time{
+        display: none;
+    }
+
+    .movie-play .about,
+    .movie-play .play{
+        height: 28px;
+        padding: 0 10px;
+    }
 }

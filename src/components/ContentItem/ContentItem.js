@@ -37,7 +37,7 @@ function ContentItem(props){
             if(numberItems - (5 + clickCounter) >= 0){
                 movieList[index].style.transform = `translateX(${
                     movieList[index].computedStyleMap().get("transform")[0].x.value 
-                    - 230}px)`
+                    - 220}px)`
             }else{
                 movieList[index].style.transform = "translateX(0)"
                 clickCounter = 0

@@ -10,3 +10,10 @@ h2{
     padding: 50px 80px;
 }
 
+/* Mobile width < 740px */
+/* RESPONSIVE */
+@media screen  and (max-width: 46.1875em){
+    #content{
+        padding: 10px 0;
+    }
+}
