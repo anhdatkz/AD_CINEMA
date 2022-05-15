@@ -4,6 +4,13 @@
     padding: 0 80px;
 }
 
+.content-single .no-results{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .content-single .content__title{
     padding: 20px 0;
 }
@@ -14,7 +21,7 @@
 
 .content-single .content__box{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -67,4 +74,16 @@
 .load-more-btn:hover{
     cursor: pointer;
     opacity: 0.9;
+}
+
+
+@media screen  and (max-width: 46.1875em){
+    .content-single{
+        padding: 0 10px;
+    }
+
+    .content-item .movie-poster{
+        width: 110px;
+        height: 150px;
+    }
 }

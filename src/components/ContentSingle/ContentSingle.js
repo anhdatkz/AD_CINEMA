@@ -10,11 +10,13 @@ function ContentSingle(props){
     const {title, type, form} = props
     const {query} = useParams()
 
-    // const [currentMovie, setCurrentMovie] = useState(0);
-
     const [movies, setMovies] = useState([]);
     const [pages, setPages] = useState(1)
     const [page, setPage] = useState(1)
+
+    const LoadMore = () => {
+        return setPage(page+1)
+    }
 
     useEffect(() => {
         fetch((form === "single") ? apiConfig.popular(type, page) : apiConfig.search(query, page))
@@ -24,11 +26,19 @@ function ContentSingle(props){
                 setMovies([...movies,...data.results]);
                 setPages(data.total_pages)
             });
-    },[page]);
+    },[page, query]);
 
-    const LoadMore = () => {
-        return setPage(page+1)
-    }
+    if(movies.length === 0) {
+        return (
+            <div className="content-single">
+                <div className="no-results">
+                    <h1>
+                        No Results!
+                    </h1>
+                </div>
+            </div>
+        )
+      }
 
     return(
         <>
