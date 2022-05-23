@@ -50,8 +50,6 @@
 
 .content__item-list .icon.prev{
     left: 0;
-    /* transform: translate(-100%, -50%); */
-    display: none;
 }
 
 .content__item-list .icon.next{

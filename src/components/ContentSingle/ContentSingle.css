@@ -1,5 +1,6 @@
 @import url(../style.css);
 .content-single{
+    min-height: 100vh;
     margin-top: var(--header-height);
     padding: 0 80px;
 }

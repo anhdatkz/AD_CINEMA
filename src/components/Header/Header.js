@@ -21,6 +21,7 @@ function Header() {
 
         navigate(`/search/all/query=${query}`)
         setQuery("")
+        scrollTop()
     }
 
     const onChangeQuery = (e) => {

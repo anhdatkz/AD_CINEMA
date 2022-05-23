@@ -4,6 +4,7 @@ import Movies from './pages/Movies'
 import Details from './pages/Details'
 import Watch from './pages/Watch'
 import Search from './pages/Search'
+import WatchMore from './pages/WatckMore'
 
 
 const publicRoutes = [
@@ -13,7 +14,8 @@ const publicRoutes = [
     { path: "/detail/:type/:id", component: Details },
     { path: "/watch/:type/:id", component: Watch },
     { path: "/watch/:type/:id/season=:season/episode=:episode", component: Watch },
-    { path: "/search/all/query=:query", component: Search}
+    { path: "/search/all/query=:query", component: Search},
+    { path: "/:media_type/:style", component: WatchMore}  
 ]
 
 const privateRoutes = [

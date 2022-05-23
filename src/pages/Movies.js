@@ -5,8 +5,7 @@ function Movies(){
 
     return(
         <>
-        <ContentSingle title="Phim lẻ" type="movie" form="single"/>
-        <Footer/>
+        <ContentSingle title="Movies" type="movie" form="single"/>
         </>
     )
 }

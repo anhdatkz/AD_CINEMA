@@ -41,7 +41,7 @@ function WatchBox(props) {
     }, [])
 
     useEffect(() => {
-        fetch(apiConfig.similar(type, id))
+        fetch(apiConfig.similar(type, id, 1))
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.results);

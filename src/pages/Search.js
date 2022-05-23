@@ -6,7 +6,6 @@ function Search(){
     return(
         <>
         <ContentSingle title="Results for" form="search"/>
-        <Footer/>
         </>
     )
 }

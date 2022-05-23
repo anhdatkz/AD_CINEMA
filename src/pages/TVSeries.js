@@ -6,7 +6,6 @@ function TVSeries(){
     return(
         <>
         <ContentSingle title="TV Series" type="tv" form="single"/>
-        <Footer/>
         </>
     )
 }

@@ -1,6 +1,7 @@
 @import url("../style.css");
 
 .watch-container{
+    min-height: 100vh;
     padding: 30px 80px;
     position: relative;
 }

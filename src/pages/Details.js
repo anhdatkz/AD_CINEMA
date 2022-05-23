@@ -9,7 +9,6 @@ function Details(props){
         <>
         <Detail/>
         <ContentCast/>
-        <Footer/>
         </>
     )
 }

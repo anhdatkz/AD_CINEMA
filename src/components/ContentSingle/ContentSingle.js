@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import apiConfig from '../../api/apiConfigs';
 import { Link } from 'react-router-dom';
 import { scrollTop } from '../../App';
@@ -8,32 +8,62 @@ import "./ContentSingle.css"
 
 function ContentSingle(props){
     const {title, type, form} = props
-    const {query} = useParams()
+    const {query, style, media_type} = useParams()
 
     const [movies, setMovies] = useState([]);
     const [pages, setPages] = useState(1)
     const [page, setPage] = useState(1)
+
+    const preQuery = useRef()
+    let url = "", titleText = ""
+
+
+    if(form === "single"){
+        url = apiConfig.popular(type, page)
+        titleText = title
+    }
+    else if(form === "search"){
+        url = apiConfig.search(query, page)
+        titleText = title + " " + query
+    }
+    else if(form === "similar"){
+        url = apiConfig.search(query, page)
+        titleText = title + " " + query
+    }
+    else if(form === "more"){
+        if(style === "trending"){
+            url = apiConfig.trending(type, page)
+        }
+        else{
+            url = apiConfig.watchMore(media_type, style, page)
+        }
+
+        titleText = title + " " + media_type + " " + style
+    }
+
 
     const LoadMore = () => {
         return setPage(page+1)
     }
 
     useEffect(() => {
-        fetch((form === "single") ? apiConfig.popular(type, page) : apiConfig.search(query, page))
+        preQuery.current = query
+        fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.results);
                 setMovies([...movies,...data.results]);
                 setPages(data.total_pages)
             });
     },[page, query]);
+
+    console.log(media_type)
 
     if(movies.length === 0) {
         return (
             <div className="content-single">
                 <div className="no-results">
                     <h1>
-                        No Results!
+                        No Results For "{query}"
                     </h1>
                 </div>
             </div>
@@ -44,7 +74,7 @@ function ContentSingle(props){
         <>
         <div className="content-single">
             <div className="content__title">
-                <h3 className="title">{(form === "single") ? `${title}`: `${title} "${query}"`}</h3>
+                <h3 className="title">{titleText}</h3>
             </div>
             <ul className="content__box">
                 {movies.map((movie, index) => {

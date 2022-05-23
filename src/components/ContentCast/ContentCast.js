@@ -13,7 +13,7 @@ function ContentCast(props) {
     return (
         <div id="content-cast">
             <Actor/>
-            <ContentItem url={apiConfig.similar(type,id)} title="Similar" type={type}/>
+            <ContentItem url={apiConfig.similar(type,id,1)} title="Similar" type={type} style="similar"/>
         </div>
     );
 }
