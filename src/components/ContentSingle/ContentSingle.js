@@ -14,7 +14,6 @@ function ContentSingle(props){
     const [pages, setPages] = useState(1)
     const [page, setPage] = useState(1)
 
-    const preQuery = useRef()
     let url = "", titleText = ""
 
 
@@ -47,16 +46,16 @@ function ContentSingle(props){
     }
 
     useEffect(() => {
-        preQuery.current = query
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                setMovies([...movies,...data.results]);
+                setMovies(data.results);
                 setPages(data.total_pages)
             });
     },[page, query]);
 
-    console.log(media_type)
+
+    console.log(page)
 
     if(movies.length === 0) {
         return (
