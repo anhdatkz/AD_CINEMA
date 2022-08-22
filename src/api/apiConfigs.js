@@ -12,7 +12,7 @@ const apiConfig = {
     watchMore:(type, style, page) =>`https://api.themoviedb.org/3/${type}/${style}?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=${page}`,
     similar: (type, id, page) => `https://api.themoviedb.org/3/${type}/${id}/similar?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&page=${page}`,
     movieApi: (id) => `https://www.2embed.to/embed/tmdb/movie?id=${id}`,
-    tvshowApi: (id, season, episode) => `https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${season}&e=${episode}`,
+    tvshowApi: (id, season, episode) => `https://www.2embed.to/embed/tmdb/tv?id=${id}&s=${season}&e=${episode}`,
     casts: (type, idMovie) => `https://api.themoviedb.org/3/${type}/${idMovie}/credits?api_key=a687feda573208f21f2b6f1f4378035a`,
     search: (query, page) => `https://api.themoviedb.org/3/search/multi?api_key=a687feda573208f21f2b6f1f4378035a&language=en-US&query=${query}&page=${page}&include_adult=false`,
     errActor: "https://i.pinimg.com/564x/9a/e5/c2/9ae5c20f9349e872f05e9feead42b64e.jpg",
