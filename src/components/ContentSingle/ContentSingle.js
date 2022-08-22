@@ -42,6 +42,7 @@ function ContentSingle(props){
 
 
     const LoadMore = () => {
+        scrollTop()
         return setPage(page+1)
     }
 
