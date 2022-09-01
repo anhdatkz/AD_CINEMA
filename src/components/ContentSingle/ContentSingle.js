@@ -14,7 +14,7 @@ function ContentSingle(props){
     const [pages, setPages] = useState(1)
     const [page, setPage] = useState(1)
 
-    let url = "", titleText = ""
+    let url = "", titleText = "";
 
 
     if(form === "single"){
@@ -31,7 +31,7 @@ function ContentSingle(props){
     }
     else if(form === "more"){
         if(style === "trending"){
-            url = apiConfig.trending(type, page)
+            url = apiConfig.trending(media_type, page)
         }
         else{
             url = apiConfig.watchMore(media_type, style, page)
