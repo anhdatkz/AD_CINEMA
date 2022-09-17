@@ -42,7 +42,7 @@ function ContentSingle(props){
 
 
     const LoadMore = () => {
-        scrollTop()
+        // scrollTop()
         return setPage(page+1)
     }
 
@@ -50,7 +50,7 @@ function ContentSingle(props){
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                setMovies(data.results);
+                setMovies([...movies, ...data.results]);
                 setPages(data.total_pages)
             });
     },[page, query]);
