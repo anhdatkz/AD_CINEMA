@@ -54,7 +54,7 @@ function WatchBox(props) {
             <div className="watch-container">
                 <div className="movie-player">
                     <div className='video-box'>
-                        <iframe width="100%" height="100%" title='watchVideo' frameBorder="0"
+                        <iframe width="100%" height="100%" title='watchVideo' frameboder="0" scrolling='no'
                             src={(type === "movie") ? apiConfig.movieApi(id) : apiConfig.tvshowApi(id, 1, episode)} allowFullScreen>
                         </iframe>
                     </div>
