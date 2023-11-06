@@ -23,11 +23,11 @@ function Content(props) {
     return (
         <div id="content">
             <ContentItem url={apiConfig.trending(types[0],1)} title={movies.trending} type={types[0]} style={styles[0]}/>
-            <ContentItem url={apiConfig.topRated(types[0])} title={movies.top_rated} type={types[0]} style={styles[1]}/>
-            <ContentItem url={apiConfig.popular(types[0],)} title={movies.popular} type={types[0]} style={styles[2]}/>
+            <ContentItem url={apiConfig.topRated(types[0], 1)} title={movies.top_rated} type={types[0]} style={styles[1]} />
+            <ContentItem url={apiConfig.popular(types[0], 1)} title={movies.popular} type={types[0]} style={styles[2]} />
             <ContentItem url={apiConfig.trending(types[1],1)} title={tv.trending} type={types[1]} style={styles[0]}/>
-            <ContentItem url={apiConfig.topRated(types[1])} title={tv.top_rated} type={types[1]} style={styles[1]}/>
-            <ContentItem url={apiConfig.popular(types[1])} title={tv.popular} type={types[1]} style={styles[2]}/>
+            <ContentItem url={apiConfig.topRated(types[1], 1)} title={tv.top_rated} type={types[1]} style={styles[1]} />
+            <ContentItem url={apiConfig.popular(types[1], 1)} title={tv.popular} type={types[1]} style={styles[2]} />
         </div>
     );
 }
