@@ -56,7 +56,7 @@ function ContentSingle(props){
     },[page, query]);
 
 
-    console.log(page)
+    console.log(page, type, media_type)
 
     if(movies.length === 0) {
         return (
@@ -80,7 +80,7 @@ function ContentSingle(props){
                 {movies.map((movie, index) => {
                     return (
                         <li className="content-item" key={index} onClick={scrollTop}>
-                            <Link to={`/detail/${type || media_type}/${movie.id}`}>
+                            <Link to={`/detail/${type || media_type || movie.media_type}/${movie.id}`}>
                             <img
                                 className="movie-poster"
                                 src={(movie.poster_path) ? apiConfig.w500Image(movie.poster_path) : apiConfig.errPoster}
